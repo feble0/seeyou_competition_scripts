@@ -1,4 +1,5 @@
 Program AAT_task_with_handicap;
+// 11.6.2019, implemented new Annex A rules for minimum distance & 1000 points allocation per class
 // Version 7
 //   . Support for new Annex A rules for minimum distance & 1000 points allocation per class
 // Version 5.02, Date 25.04.2018
@@ -186,7 +187,7 @@ begin
   end;
   
   // Maximum available points for the Day
-  PmaxDistance := (5*D0/1000)-250;
+  PmaxDistance := 1250*D0/D1-250;
   PmaxTime := (400*T0/3600.0)-200;
   If T0 <= 0 Then PmaxTime := 1000;
   Pm := MinValue( PmaxDistance, PmaxTime, 1000.0 );
